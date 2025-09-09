@@ -63,10 +63,11 @@ spring:
   redis:
     # 需要开启redis远程访问功能 redis.conf 文件  注释掉bind 127.0.0.1 再改变protected-mode值为no
     host: ${REDIS_HOST}
-    port: ${REDIS_PASSWORD}
+    port: ${REDIS_PORT}
     # 配置redis.conf文件requirepass 的值
     # 设置了密码后,使用redis-cli时需要 auth验证 直接输入 auth sDF234sdf#@@$@$fdd即可
     database: 0
+    password: ${REDIS_PASSWORD}
   session:
     store-type: redis
   servlet:
