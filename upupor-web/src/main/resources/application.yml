@@ -44,9 +44,9 @@ spring:
           paths: /**
   # 数据源配置
   datasource:
-    url: jdbc:mysql://localhost:3306/upupor?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: root
-    password: 123456
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useUnicode=true&useSSL=false&characterEncoding=utf8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 连接池配置
     druid:
@@ -62,8 +62,8 @@ spring:
   # redis配置 redis版本 4.0.9 redis重启后spring服务会自动链接
   redis:
     # 需要开启redis远程访问功能 redis.conf 文件  注释掉bind 127.0.0.1 再改变protected-mode值为no
-    host: 127.0.0.1
-    port: 6379
+    host: ${REDIS_HOST}
+    port: ${REDIS_PASSWORD}
     # 配置redis.conf文件requirepass 的值
     # 设置了密码后,使用redis-cli时需要 auth验证 直接输入 auth sDF234sdf#@@$@$fdd即可
     database: 0
