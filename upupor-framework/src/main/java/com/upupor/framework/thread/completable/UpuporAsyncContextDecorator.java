@@ -33,7 +33,6 @@ import org.springframework.core.task.TaskDecorator;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 
-import javax.annotation.Nonnull;
 
 /**
  * upupor异步线程池装饰器
@@ -44,8 +43,7 @@ import javax.annotation.Nonnull;
  */
 public class UpuporAsyncContextDecorator implements TaskDecorator {
     @Override
-    @Nonnull
-    public Runnable decorate(@Nonnull Runnable runnable) {
+    public Runnable decorate(Runnable runnable) {
         // 获取主线程中的请求信息
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
         return () -> {
